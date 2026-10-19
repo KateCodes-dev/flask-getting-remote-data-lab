@@ -10,11 +10,9 @@ class GetRequester:
         self.url = url
 
     def get_response_body(self):
-        # Return the raw response body as bytes.
         response = requests.get(self.url)
         return response.content
 
     def load_json(self):
-        # Decode the JSON response into Python data.
         response_body = self.get_response_body()
         return json.loads(response_body)
